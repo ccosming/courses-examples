@@ -1,11 +1,13 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const HelloWorld = await ethers.getContractFactory("HelloWorld");
-  const helloWorld = await HelloWorld.deploy();
-  await helloWorld.deployed();
+  console.log("Deploying...");
 
-  console.log("Hello World constract deployed at:", helloWorld.address);
+  const HelloWorld = await ethers.getContractFactory("HelloWorld");
+  const contract = await HelloWorld.deploy();
+  await contract.deployed();
+
+  console.log("Hello World constract deployed at:", contract);
 }
 
 main().catch((error) => {

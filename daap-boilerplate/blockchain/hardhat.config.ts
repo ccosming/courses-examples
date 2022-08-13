@@ -1,7 +1,8 @@
 import "@nomicfoundation/hardhat-toolbox";
+import dotenv from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
 
-console.log(process.env.PRIVATE_KEY);
+dotenv.config();
 
 const config: HardhatUserConfig = {
   solidity: "0.8.9",
@@ -13,9 +14,6 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-  },
-  typechain: {
-    outDir: "../libs/typechain/src",
   },
 };
 

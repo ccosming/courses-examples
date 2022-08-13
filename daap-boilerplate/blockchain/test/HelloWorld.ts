@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { HelloWorld } from "../../libs/typechain/src";
+import { HelloWorld } from "../typechain-types";
 
 describe("HelloWorld", function () {
   let contract: any;
@@ -14,8 +14,7 @@ describe("HelloWorld", function () {
   describe("Deployment", function () {
     it("Should return hello world", async function () {
       const response = await helloWorld.sayHelloWorld();
-
-      expect(response).to.equal("Hello World");
+      expect(response).to.equal("Hello World from Smart Contract");
     });
   });
 });
